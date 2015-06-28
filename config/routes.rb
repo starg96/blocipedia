@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   get 'welcome/about'
 
+  resources :wikis
+
   root to: 'welcome#index'
 end

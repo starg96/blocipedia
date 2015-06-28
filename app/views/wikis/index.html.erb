@@ -1,0 +1,9 @@
+<h1>All Wikis</h1>
+
+<%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
+
+<ul>
+	<% @wikis.all.each do |wiki| %>
+		<li><%= link_to wiki.title, wiki %></li>
+	<% end %>
+</ul>
