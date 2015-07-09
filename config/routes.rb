@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   get 'welcome/about'
 
+  resources :charges, only: [:new, :create, :index]
+
   resources :wikis
+  resources :users, only: [:show, :index]
+  resources :downgrades, only: :create
 
   root to: 'welcome#index'
 end

@@ -1,0 +1,18 @@
+<h1><%= current_user.email %></h1>
+
+<h2>Wikis</h2>
+<ul>
+	<% @wikis.each do |wiki| %>
+		<li><%= link_to wiki.title, wiki %></li>
+	<% end %>
+</ul>
+<br>
+
+<br>
+<% if current_user.role == "standard" %>
+  <h4>Standard User</h4>
+  <%= link_to "Upgrade Account", new_charge_path, class: 'btn btn-success' %>
+<% elsif current_user.role == "premium" %>
+  <h4>Premium User</h4>
+  <%= link_to "Downgrade Account", downgrades_path(id: @user),  method: :post %>
+<% end %>
