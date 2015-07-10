@@ -5,6 +5,6 @@ class WikiPolicy < ApplicationPolicy
 
 
 	def show?
-		record.public? || user.present?
+		record.private? || user.present?
 	end
 end

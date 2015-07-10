@@ -37,7 +37,8 @@
   <%= link_to "Upgrade Account", new_charge_path, class: 'btn btn-success' %>
 <% elsif current_user.role == "premium" %>
   <h4>Premium User</h4>
-  <%= link_to "Downgrade Account", charges_path, class: 'btn btn-success' %>
+  <%= link_to "Downgrade Account", downgrades_path(id: @user), data: { confirm: 'Are you sure? All Private Wikis will be made Public!' }, class: 'btn btn-danger', method: :post %> <br/>
+    <p>Downgrading will Make all Private Wikis Public</p>
 <% end %>
 
 <h3>Cancel my account</h3>

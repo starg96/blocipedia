@@ -1,11 +1,11 @@
 class WikisController < ApplicationController
 	def index
-		@wikis = Wiki.all
-		authorize @wikis
+		@wikis = Wiki.visible_to(current_user)
 	end
 
 	def show
 		@wiki = Wiki.find(params[:id])
+	
 	end
 
 	def new
