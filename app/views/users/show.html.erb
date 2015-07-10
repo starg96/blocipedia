@@ -3,7 +3,7 @@
 <h2>Wikis</h2>
 <ul>
 	<% @wikis.each do |wiki| %>
-		<li><%= link_to wiki.title, wiki %></li>
+		<li><%= link_to (markdown_to_html wiki.title), wiki %></li>
 	<% end %>
 </ul>
 <br>
