@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :wikis
   resources :users, only: [:show, :index]
   resources :downgrades, only: :create
+  resources :collaborators
 
   root to: 'welcome#index'
 end

@@ -5,7 +5,7 @@
 <% end %>
 
 <ul>
-	<% @wikis.all.each do |wiki| %>
+	<% @wikis.each do |wiki| %>
 		<li><%= link_to wiki.title, wiki %></li>
 	<% end %>
 </ul>

@@ -6,6 +6,12 @@
 		<li><%= link_to (markdown_to_html wiki.title), wiki %></li>
 	<% end %>
 </ul>
+<h2>Collaborated Wikis</h2>
+<ul>
+	<% @collab_wikis.each do |collab| %>
+		<li><%= link_to (markdown_to_html collab.title), collab %></li>
+	<% end %>
+</ul>
 <br>
 
 <br>
@@ -17,3 +23,5 @@
   <%= link_to "Downgrade Account", downgrades_path(id: @user), data: { confirm: 'Are you sure? All Private Wikis will be made Public!' }, class: 'btn btn-danger', method: :post %> <br/>
     <p>Downgrading will Make all Private Wikis Public</p>
 <% end %>
+
+
